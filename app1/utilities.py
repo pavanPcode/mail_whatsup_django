@@ -1,5 +1,5 @@
 import smtplib
-def mail_send(gmail,message):
+def mail_send(gmail,text):
 
     # creates SMTP session
     s = smtplib.SMTP('smtp.gmail.com', 587)
@@ -9,11 +9,21 @@ def mail_send(gmail,message):
     s.login('rangusaipavan6@gmail.com', 'iqmzphegahahetxe')
     # message to be sent
     # sending the mail
+    message = f"""From: From Person <pavan@perennialcode.in>
+    To: To Person <{gmail}>
+    Subject: SMTP e-mail test
+
+    {text}
+    """
+
+
     data = s.sendmail('rangusaipavan6@gmail.com', gmail, message)
 
     # terminating the session
     s.quit()
     return {"status":"success"}
+message = """babu
+"""
 
 
 def send_whatsApp_message(mobile,message):

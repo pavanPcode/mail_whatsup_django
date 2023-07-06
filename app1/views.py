@@ -18,7 +18,7 @@ def send(request):
     mobile = request.POST.get("mobilenumber")
     gmail = request.POST.get("email")
     message = request.POST.get("subject")
-    print(mobile,gmail,message)
+
 
     send_whatsApp_message(mobile, message)
     mail_send(gmail,message)
