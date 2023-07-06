@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.col-75 {
+  float: left;
+  width: 100%;
+  margin-top: 6px;
+}
+
+
+
+<!--dropdown-->
+
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+</style>
+</head>
+<body>
+
+<form action="/sendMessages/index/" style="max-width:500px;margin:auto" method="post">
+    {% csrf_token %}
+ <p>Enter your Customers:</p>
+
+    <input type="text" list="citylist" Placeholder="Search Customers.." class="form-control" style="width:300px;" name="customername" >
+    <datalist id="citylist">
+
+
+
+ {% for results in custometList %}
+
+
+
+        <option value="{{ results.customernmae}}"></option>
+
+
+ {% endfor %}
+
+    </datalist>
+
+<button type="get" >Get CustomerDetails</button>
+</form>
+
+
+
+<form action="/sendMessages/send/" style="max-width:500px;margin:auto" method="post">
+        {% csrf_token %}
+    <p>customer name : <h>{{customername}}</h></p>
+  <h2> Send whatsApp Message And Mail</h2>
+  <div class="input-container">
+    <i class="fa fa-mobile icon"></i>
+    <input class="input-field" type="tel" placeholder="mobile" name="mobilenumber" value="{{mobile}}">
+
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type="email" placeholder="Email"  name="email" value="{{email}}">
+  </div>
+
+
+  <div class="input-container">
+
+
+
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px; width: 100%;"></textarea>
+    </div>
+
+
+
+
+
+  <button type="submit" class="btn">Send Message</button>
+</form>
+
+
+
+</body>
+</html>
