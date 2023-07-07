@@ -116,7 +116,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </head>
 <body>
 
-<form action="/sendMessages/index/" style="max-width:500px;margin:auto" method="post">
+<form action="/" style="max-width:500px;margin:auto" method="post">
     {% csrf_token %}
  <p>Enter your Customers:</p>
 
@@ -141,7 +141,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
 
-<form action="/sendMessages/send/" style="max-width:500px;margin:auto" method="post">
+<form action="/send/" style="max-width:500px;margin:auto" method="post">
         {% csrf_token %}
     <p>customer name : <h>{{customername}}</h></p>
   <h2> Send whatsApp Message And Mail</h2>
