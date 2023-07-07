@@ -49,7 +49,7 @@ def send(request):
 
     return HttpResponse("""<h>message sended successfully </h> 
     <a href="/">Home page link</a>""")
-#for logout
+
 @login_required(login_url='/login/')
 def page_logout(request):
     logout(request)
