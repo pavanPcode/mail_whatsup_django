@@ -9,7 +9,7 @@ def mail_send(gmail,text):
     s.login('rangusaipavan6@gmail.com', 'iqmzphegahahetxe')
     # message to be sent
     # sending the mail
-    message = f"""From: From Person <pavan@perennialcode.in>
+    message = f"""From: From Person <rangusaipavan6@gmail.com>
     To: To Person <{gmail}>
     Subject: SMTP e-mail test
 
