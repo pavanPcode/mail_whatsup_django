@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gzxx=2^9#5j#qzs@os_zd3e39=(eblan=&@tdd_w$ub!bsxvt*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -88,6 +88,19 @@ DATABASES001 = {
     }
 }
 
+DATABASES= {
+    'default':{
+        'ENGINE':'mssql',
+        'NAME':'notifydb',
+        'USER':'sadguru',
+        'PASSWORD':'P3r3nni@l',
+        'HOST':'pcode.database.windows.net',
+        'PORT':'',
+        'OPTIONS': {
+            'driver':'ODBC Driver 17 for SQL Server',
+        },
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
