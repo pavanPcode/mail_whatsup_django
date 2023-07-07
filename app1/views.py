@@ -26,8 +26,7 @@ def login(request):
     else:
         return render(request,'login.html')
 
-def page_logout():
-    pass
+
 
 def hello(request):
     return  HttpResponse('hello p3')
