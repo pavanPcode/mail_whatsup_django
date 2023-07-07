@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gzxx=2^9#5j#qzs@os_zd3e39=(eblan=&@tdd_w$ub!bsxvt*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -74,13 +74,13 @@ WSGI_APPLICATION = 'mail.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES001 = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_mail_whatsup',
-        'USER': 'root',
-        'PASSWORD': 'pavan',
-        'HOST': '127.0.0.1',
+        'NAME': 'db_a50d85_payroll',
+        'USER': 'a50d85_payroll',
+        'PASSWORD': 'p3r3nnial',
+        'HOST': 'MYSQL5048.site4now.net',
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
@@ -88,7 +88,7 @@ DATABASES001 = {
     }
 }
 
-DATABASES= {
+DATABASES001gdh = {
     'default':{
         'ENGINE':'mssql',
         'NAME':'notifydb',

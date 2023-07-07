@@ -22,8 +22,7 @@ def mail_send(gmail,text):
     # terminating the session
     s.quit()
     return {"status":"success"}
-message = """babu
-"""
+
 
 
 def send_whatsApp_message(mobile,message):
