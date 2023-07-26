@@ -7,6 +7,7 @@ def mail_send(gmail,text):
     s.starttls()
     # Authentication
     s.login('rangusaipavan6@gmail.com', 'iqmzphegahahetxe')
+
     # message to be sent
     # sending the mail
     message = f"""From: From Person <rangusaipavan6@gmail.com>
