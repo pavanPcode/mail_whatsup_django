@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'notifymessages'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA72F74C4BAE4BD281E7226230D602A6 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_ACF655F66DE64C7A9B2DB76EC7281C15 }}
