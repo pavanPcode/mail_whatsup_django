@@ -9,6 +9,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
+
 def login(request):
     if request.method== 'POST':
         username = request.POST['username']
@@ -32,6 +33,7 @@ def hello(request):
     return  HttpResponse('hello p3')
 
 
+
 # Create your views here.
 
 @login_required(login_url='/login/')
@@ -40,12 +42,12 @@ def send(request):
     mobile = request.POST.get("mobilenumber")
     gmail = request.POST.get("email")
     message = request.POST.get("subject")
+    print(request.POST.get("cars"))
 
 
     send_whatsApp_message(mobile, message)
-    mail_send(gmail,message)
-    foo_instance = Messagesdetails.objects.create(customername='not devloped',mobile = mobile,
-                                                  email =gmail,message = message,sendingtime = datetime.datetime.now(tz=timezone.utc))
+    #mail_send(gmail,message)
+    foo_instance = Messagesdetails.objects.create(customername='not devloped',mobile = mobile,email =gmail,message = message,sendingtime = datetime.datetime.now(tz=timezone.utc))
 
     return HttpResponse("""<h>message sended successfully </h> 
     <a href="/">Home page link</a>""")

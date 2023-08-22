@@ -29,6 +29,7 @@ def mail_send(gmail,text):
 def send_whatsApp_message(mobile,message):
     import requests
 
-    x = requests.get(f'https://perennialcode.pythonanywhere.com/sendWhatsAppMessage?number={mobile}&message={message}')
+
+    x = requests.get(f'https://bookmyotservice.pythonanywhere.com/sendWhatsAppMessage?number={mobile}&message={message}')
 
     return  str(x.text)
